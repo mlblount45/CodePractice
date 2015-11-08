@@ -1,4 +1,4 @@
-package HackerRank;
+package com.blountmarquis.HackerRank;
 
 import java.util.Scanner;
 
@@ -22,8 +22,8 @@ public class CavityMap {
             for(int j = 0; j<n; j++){
                 matrix[i][j] = s.charAt(j) - '0';
             }
-        }return matrix;
-    }
+    }return matrix;
+}
 
     private static void markCavities(int[][] matrix) {
         for (int i = 1; i < matrix.length-1; i++) {
