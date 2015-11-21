@@ -2,6 +2,8 @@ package com.blountmarquis.algorithms.sorting;
 
 import com.blountmarquis.util.PrintableArray;
 
+import java.math.BigInteger;
+
 /**
  * Created by MLBlount on 10/2/2014.
  */
@@ -9,7 +11,6 @@ public class InsertionSort extends PrintableArray {
 
     public static void sort(int[] array) {
         if (array == null) return;
-
         for (int j = 1; j < array.length; j++) {
             int key = array[j];
             int i = j - 1;
@@ -19,6 +20,8 @@ public class InsertionSort extends PrintableArray {
                 i--;
             }
             array[i + 1] = key;
+            BigInteger b = BigInteger.valueOf(0L);
+
 
         }
     }

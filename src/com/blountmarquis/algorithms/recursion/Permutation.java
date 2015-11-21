@@ -28,7 +28,6 @@ public class Permutation {
 
     private static ArrayList<String> getPermutations(String str){
         if(str == null) return null;
-
         ArrayList<String> permutations = new ArrayList<String>();
         if(str.length() == 0){
             permutations.add("");
@@ -36,21 +35,11 @@ public class Permutation {
         }
 
         char first = str.charAt(0);
-       // System.out.print("Current moving letter is " + first + " and ");
         String remainingString = str.substring(1);
-        //System.out.println("Current remaining string is " + remainingString);
         ArrayList<String> words = getPermutations(remainingString);
-        //System.out.println();
-        //System.out.print("words are ");
-        //for(String word: words){
-        //    System.out.print(word + " ");
-        //}
-        //System.out.println();
         for(String word: words){
             for(int i = 0; i <= word.length(); i++){
-                //System.out.println("Current moving letter is " + first + " and Current word is: " + word);
                 String s = insertCharAt(word, first, i);
-                //System.out.println("Current combined String being added to perms list is " + s);
                 permutations.add(s);
             }
         }

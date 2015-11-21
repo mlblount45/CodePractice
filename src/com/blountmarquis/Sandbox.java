@@ -1,5 +1,8 @@
 package com.blountmarquis;
 
+import com.blountmarquis.algorithms.sorting.QuickSort;
+import com.blountmarquis.util.PrintableArray;
+
 import java.io.IOException;
 
 /**
@@ -78,9 +81,9 @@ public class Sandbox {
             }*/
 
 
-           /* int array[] = new int[]{16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
+            int array[] = new int[]{5 ,8 ,1 ,3 ,7 ,9 ,2};//{16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
             QuickSort.sort(array);
-            PrintableArray.printArray("Quick Sort ", array);*/
+            PrintableArray.printArray("Quick Sort ", array);
 
 
 
@@ -183,10 +186,5 @@ public class Sandbox {
             int maxSlice = MaxSlice.getMaxSlice(array);
             System.out.println("------Final Max Slice-----");
             System.out.println("Max slice is: " + maxSlice);*/
-
-            int x = 12;
-            x &= (-x);
-            System.out.println(Integer.toBinaryString(~ 0 << 2));
-
         }
 }
