@@ -48,7 +48,7 @@ public class MinSlice {
 
     public static void main(String[] args){
         int[] array = new int[]{2,-4,6,-3,9};
-        int minSlice = getSortedPrefixAbsoluteMinSlice(array);
+        int minSlice = getKadaneAbsoluteMinSlice(array);
         System.out.println("------Final Min Slice-----");
         System.out.println("Min slice is: " + minSlice);
     }

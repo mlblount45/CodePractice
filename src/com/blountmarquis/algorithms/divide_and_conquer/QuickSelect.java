@@ -1,6 +1,7 @@
 package com.blountmarquis.algorithms.divide_and_conquer;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by mlblount on 8/22/2015.
@@ -18,20 +19,19 @@ import java.util.Random;
  */
 public class QuickSelect {
 
-    public static int selectIthSmallest(int[] arr, int k) {
+    public static int quickSelect(int[] arr, int k) {
         if (k < 1 || arr.length == 0 || k > arr.length)
             throw new IllegalArgumentException("WTF: array must have at least 1 element and k must be greater than or equal to 1 and less than array length");
-        return selectIthSmallest(arr, 0, arr.length - 1, k);
+        return quickSelect(arr, 0, arr.length - 1, k);
     }
 
-    private static int selectIthSmallest(int[] arr, int start, int end, int i) {
+    private static int quickSelect(int[] arr, int start, int end, int i) {
         if (start == end) return arr[start];
         int mid = partition(arr, start, end);
         int k = mid - start + 1;
         if (i == k) return arr[mid];
-
-        if (start < mid - 1 && i < k) return selectIthSmallest(arr, start, mid - 1, i);
-        else return selectIthSmallest(arr, mid + 1, end, i - k);
+        if (i < k) return quickSelect(arr, start, mid - 1, i);
+        else return quickSelect(arr, mid + 1, end, i - k);
     }
 
 
@@ -63,8 +63,13 @@ public class QuickSelect {
     }
 
 
-    public static void main(String[] args) {                         //1  2  3  4  5  6  7   8   9  10
-        int array[] = new int[]{16, 4, 10, 14, 7, 9, 3, 2, 8, 1}; //=> 1, 2, 3, 4, 7, 8, 9, 10, 14, 16
-        System.out.println("kth smallest number is: " + QuickSelect.selectIthSmallest(array, 8));
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i++){
+            arr[i]= in.nextInt();
+        }
+        System.out.print(quickSelect(arr,(n+1)/2));
     }
 }
