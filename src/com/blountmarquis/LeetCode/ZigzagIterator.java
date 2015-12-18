@@ -17,20 +17,15 @@ public class ZigzagIterator {
         lists.add(v2);
         current = lists.size();
         size = v1.size() + v2.size();
-        System.out.println(current);
     }
 
     public int next() {
-        int temp = 0;
-        int next = current % lists.size() + 1;
-        if (lists.get(current).size() == 0) temp = lists.get(next).remove(0);
-        else temp = lists.get(current).remove(0);
-        current = next;
+        int loc = current % 2;
+        current = (loc + 1) % 2;
         size--;
-        return temp;
+        if (lists.get(loc).size() == 0) return lists.get(current).remove(0);
+        else return lists.get(loc).remove(0);
     }
 
-    public boolean hasNext() {
-        return size > 0;
-    }
+    public boolean hasNext() { return size > 0; }
 }

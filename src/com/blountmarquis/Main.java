@@ -5,5 +5,6 @@ public class Main {
         MouseMover mouseMover = new MouseMover();
         Thread thread = new Thread(mouseMover);
         thread.start();
+
     }
 }

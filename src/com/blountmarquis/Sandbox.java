@@ -1,16 +1,13 @@
 package com.blountmarquis;
 
-import com.blountmarquis.algorithms.sorting.QuickSort;
-import com.blountmarquis.util.PrintableArray;
-
 import java.io.IOException;
 
 /**
  */
 public class Sandbox {
-        public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException {
 
-            //int array[] = new int[]{31, 41, 59, 26, 41, 58};
+        //int array[] = new int[]{31, 41, 59, 26, 41, 58};
             /*InsertionSort.printArray(array);
             System.out.println("--------------");
             InsertionSort.sort(array);
@@ -29,8 +26,8 @@ public class Sandbox {
 
             /*int array[] = new int[]{13, -3, -25, 20, -3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
             MaxSubArray.printArray(MaxSubArray.findMaxSubArray(array));*/
-            //1, 2, 3, 8, 4, 9, 10, 14, 16, 7
-            //16, 4, 10, 14, 7, 9, 3, 2, 8, 1
+        //1, 2, 3, 8, 4, 9, 10, 14, 16, 7
+        //16, 4, 10, 14, 7, 9, 3, 2, 8, 1
             /*int array[] = new int[]{16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
             PrintableArray.printArray("initial array", array);
             Heap.buildMinHeap(array);
@@ -81,9 +78,9 @@ public class Sandbox {
             }*/
 
 
-            int array[] = new int[]{5 ,8 ,1 ,3 ,7 ,9 ,2};//{16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
+            /*int array[] = new int[]{5 ,8 ,1 ,3 ,7 ,9 ,2};//{16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
             QuickSort.sort(array);
-            PrintableArray.printArray("Quick Sort ", array);
+            PrintableArray.printArray("Quick Sort ", array);*/
 
 
 
@@ -186,5 +183,9 @@ public class Sandbox {
             int maxSlice = MaxSlice.getMaxSlice(array);
             System.out.println("------Final Max Slice-----");
             System.out.println("Max slice is: " + maxSlice);*/
-        }
+
+        int h = 4;
+        System.out.println(1 << h);
+
+    }
 }

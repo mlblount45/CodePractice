@@ -18,4 +18,5 @@ public class BinaryTreeMockTest {
     public void getHeightTest(){
         assertSame(tree.getHeight(), 27);
     }
+
 }
