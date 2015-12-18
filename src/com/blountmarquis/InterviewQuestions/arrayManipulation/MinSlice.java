@@ -20,8 +20,7 @@ public class MinSlice {
     public static int getSortedPrefixAbsoluteMinSlice(int[] arr){
         int[] sums = getPrefixSum(arr);
         Arrays.sort(sums);
-        int minDifferance = getMinDifference(sums);
-        return minDifferance;
+        return getMinDifference(sums);
     }
 
     public static int[] getPrefixSum(int[] arr){
