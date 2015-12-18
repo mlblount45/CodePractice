@@ -93,7 +93,7 @@ public class QuickSort {
     }
 
     /**
-     * <p>This partition Algorithm was adopted from introduction to algorithms. </p>
+     * <p>This partition Algorithm was adopted from introduction to algorithms. And The algorithm Design Manual</p>
      * @param arr
      * @param start
      * @param end
