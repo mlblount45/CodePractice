@@ -11,7 +11,6 @@ public class MinSlice {
         minEnd = minSlice = arr[0];
 
         for(int i = 1; i < arr.length; i++){
-            System.out.println("potential Min ending is: " + Math.abs(minEnd + arr[i]));
             minEnd = Math.min(arr[0], Math.abs(minEnd + arr[i]));
             minSlice = Math.min(minEnd, minSlice);
         }
