@@ -22,6 +22,15 @@ public class PrimeCounter {
         return primeCount;
     }
 
+    /**
+     *Assume every integer greater than or equal to 2 is prime.
+     *Start at the beginning of the list, if the number is prime, cross out every multiple of that number off the list. They are not prime.
+     *Go to the next number, if it is crossed out, skip it - it is not prime. If it is not crossed out, it must be prime, cross out it's multiples.
+     *Repeat
+     *
+     * @param n
+     * @return
+     */
     private boolean[] setUpSievePrime(int n){
         boolean[] primes = new boolean[n];
         Arrays.fill(primes, true);
