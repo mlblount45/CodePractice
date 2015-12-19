@@ -15,9 +15,10 @@ public class SumSegmentTree {
     }
 
     Node root;
-
+    int max;
     public SumSegmentTree(int[] arr) {
-        root = buildTree(arr, 0, arr.length - 1);
+        max = arr.length - 1;
+        root = buildTree(arr, 0, max);
     }
 
     private Node buildTree(int[] arr, int start, int end) {
@@ -33,8 +34,9 @@ public class SumSegmentTree {
         return n;
     }
 
-    public void update(int pos, int val) {
-        update(root, pos, val);
+    public void update(int i, int val) {
+        if(i < 0 || i > max) throw new IndexOutOfBoundsException();
+        update(root, i, val);
     }
 
     private void update(Node n, int pos, int val) {
@@ -48,6 +50,7 @@ public class SumSegmentTree {
     }
 
     public int sumRange(int i, int j) {
+        if(i < 0 || j > max || i > max || j < 0) throw new IndexOutOfBoundsException();
         return sumRange(root, i, j);
     }
 
