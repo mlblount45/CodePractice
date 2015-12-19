@@ -1,4 +1,4 @@
-package com.blountmarquis.stackoverflow;
+package com.blountmarquis.datastructures;
 
 import java.util.ArrayList;
 import java.util.HashMap;
