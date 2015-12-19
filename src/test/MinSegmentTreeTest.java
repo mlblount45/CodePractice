@@ -14,6 +14,7 @@ public class MinSegmentTreeTest {
     @Before
     public void setUp() throws Exception {
         minSegTree = new MinSegmentTree(new int[]{2, 5, -4, 6, 0});
+        minSegTree.update(4,-5);
     }
 
     @Test
@@ -23,7 +24,7 @@ public class MinSegmentTreeTest {
 
     @Test
     public void whenMinAtStartOfRangeMinReturned() throws Exception {
-        Assert.assertSame(-4, minSegTree.minRange(2, 4));
+        Assert.assertSame(-5, minSegTree.minRange(2, 4));
     }
 
     @Test
@@ -38,7 +39,7 @@ public class MinSegmentTreeTest {
 
     @Test
     public void whenEntireRangeQueiedReturnMinElementOfArray() throws Exception {
-        Assert.assertSame(-4, minSegTree.minRange(0, 4));
+        Assert.assertSame(-5, minSegTree.minRange(0, 4));
     }
 
     @Test
@@ -48,7 +49,8 @@ public class MinSegmentTreeTest {
 
     @Test
     public void whenEndOfArrayQueiredReturnMin() throws Exception {
-        Assert.assertSame(0, minSegTree.minRange(3, 4));
+        minSegTree.update(4, -100);
+        Assert.assertSame(-100, minSegTree.minRange(3, 4));
     }
 
     @Test
@@ -56,8 +58,4 @@ public class MinSegmentTreeTest {
         Assert.assertSame(2, minSegTree.minRange(0, 1));
     }
 
-    @Test
-    public void testMinRange() throws Exception {
-
-    }
 }
