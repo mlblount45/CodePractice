@@ -30,6 +30,7 @@ public class CountingPrefix {
     }
 
     public static void main(String[] args) {
-
+        int[] sums = CountingPrefix.getPrefixSums(new int[]{1, 3, 5});
+        System.out.println(CountingPrefix.countTotalSlice(sums,1,2));
     }
 }
