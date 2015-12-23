@@ -1,6 +1,5 @@
-package test;
+package com.blountmarquis.datastructures;
 
-import com.blountmarquis.datastructures.MaxSegmentTree;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

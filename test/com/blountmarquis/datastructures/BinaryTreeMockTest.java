@@ -1,11 +1,11 @@
-package test;
+package com.blountmarquis.datastructures;
 
-import com.blountmarquis.datastructures.BinaryTree;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertSame;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class BinaryTreeMockTest {
 
