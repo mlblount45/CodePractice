@@ -1,4 +1,4 @@
-package com.blountmarquis.kata;
+package com.blountmarquis.katas;
 
 /**
  * Created by MLBlount on 12/24/2015.
