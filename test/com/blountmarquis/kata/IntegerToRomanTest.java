@@ -11,6 +11,11 @@ import static org.junit.Assert.assertEquals;
  */
 public class IntegerToRomanTest {
 
+    @Test
+    public void whenNumberIsZeroThenReturnEmptyString(){
+        assertEquals("", IntegerToRoman.getRoman(0));
+
+    }
 
     @Test
     public void whenNumberIsOneReturnI() {
