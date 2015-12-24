@@ -1,5 +1,6 @@
 package com.blountmarquis.kata;
 
+import com.blountmarquis.katas.IntegerToRoman;
 import org.junit.Ignore;
 import org.junit.Test;
 
