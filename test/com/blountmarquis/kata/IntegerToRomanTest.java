@@ -39,4 +39,9 @@ public class IntegerToRomanTest {
     public void whenNumberIs1800ReturnRomanMDCCC() {
         assertEquals("MDCCC", IntegerToRoman.intToRoman(1800));
     }
+
+    @Test
+    public void whenNumIs998ReturnX() {
+        assertEquals("CMXCVIII", IntegerToRomanKata.intToRoman(998));
+    }
 }
