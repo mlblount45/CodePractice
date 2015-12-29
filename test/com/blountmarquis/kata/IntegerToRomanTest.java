@@ -12,31 +12,31 @@ public class IntegerToRomanTest {
 
     @Test
     public void whenNumberIsZeroThenReturnEmptyString(){
-        assertEquals("", IntegerToRoman.getRoman(0));
+        assertEquals("", IntegerToRoman.intToRoman(0));
     }
 
     @Test
     public void whenNumberIsOneReturnI() {
-        assertEquals("I", IntegerToRoman.getRoman(1));
+        assertEquals("I", IntegerToRoman.intToRoman(1));
     }
 
     @Test
     public void whenNumberIsFiveReturnV() {
-        assertEquals("V", IntegerToRoman.getRoman(5));
+        assertEquals("V", IntegerToRoman.intToRoman(5));
     }
 
     @Test
     public void whenNumberIsTwoReturnII() {
-        assertEquals("II", IntegerToRoman.getRoman(2));
+        assertEquals("II", IntegerToRoman.intToRoman(2));
     }
 
     @Test
     public void whenNumberIs35ReturnXXXV() {
-        assertEquals("XXXV", IntegerToRoman.getRoman(35));
+        assertEquals("XXXV", IntegerToRoman.intToRoman(35));
     }
 
     @Test
     public void whenNumberIs1800ReturnRomanMDCCC() {
-        assertEquals("MDCCC", IntegerToRoman.getRoman(1800));
+        assertEquals("MDCCC", IntegerToRoman.intToRoman(1800));
     }
 }
