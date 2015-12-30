@@ -1,4 +1,4 @@
-package com.blountmarquis.algorithms;
+package com.blountmarquis.algorithms.divideandconquer;
 
 /**
  * Created by MLBlount on 12/23/2015.

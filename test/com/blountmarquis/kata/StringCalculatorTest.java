@@ -42,4 +42,9 @@ public class StringCalculatorTest {
     public void whenInputStringContainsMultipleDelimitersAndOnePlusOneNumberThenThrowInvalidFormatException() {
         assertEquals(2, StringCalculator.sum("1\n"));
     }
+
+    @Test
+    public void whenInputStringContainsUserSpecifiedDelimitersAndOnePlusOneThenReturnTwo() {
+        assertEquals(2, StringCalculator.sum("//;\n1;1"));
+    }
 }

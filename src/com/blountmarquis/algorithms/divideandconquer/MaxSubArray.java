@@ -1,4 +1,4 @@
-package com.blountmarquis.algorithms.divide_and_conquer;
+package com.blountmarquis.algorithms.divideandconquer;
 
 import com.blountmarquis.util.PrintableArray;
 

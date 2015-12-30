@@ -1,5 +1,6 @@
-package com.blountmarquis.algorithms;
+package com.blountmarquis.algorithms.divideandconqure;
 
+import com.blountmarquis.algorithms.divideandconquer.BinarySearch;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
