@@ -10,16 +10,10 @@ public class MouseMover implements Runnable {
 
     @Override
     public void run() {
-        long threadSleepTime = 120000;
         for (;;){
             moveMouse();
-            try {
-                Thread.sleep(threadSleepTime);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            sleepThread();
         }
-
     }
 
     private static void moveMouse() {
@@ -31,6 +25,15 @@ public class MouseMover implements Runnable {
             robot.mouseMove(val1, val2);
             System.out.println("Moving mouse to X: " + val1 + " Y: " + val2);
         } catch (AWTException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sleepThread() {
+        long threadSleepTime = 120000;
+        try {
+            Thread.sleep(threadSleepTime);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
