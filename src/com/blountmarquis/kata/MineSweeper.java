@@ -4,63 +4,48 @@ package com.blountmarquis.kata;
  * Created by MLBlount on 1/17/2016.
  */
 public class MineSweeper {
+
+    public static final char BOMB_SYMBOL = '*';
+
     public char[][] getSweptMatrix(char[][] matrix) {
-        if(matrix == null) throw new IllegalArgumentException();
+        if (matrix == null) throw new IllegalArgumentException();
         buildSweepMatrix(matrix);
         return matrix;
     }
 
     private void buildSweepMatrix(char[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                int count = checkAdjacentsForBombs(matrix, i, j);
-                if (matrix[i][j] != '*') matrix[i][j] = (char) (count + '0');
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++) {
+                if (matrix[row][col] != BOMB_SYMBOL) {
+                    matrix[row][col] = bombCountToChar(matrix, row, col);
+                }
             }
         }
     }
 
-    private int checkAdjacentsForBombs(char[][] matrix, int i, int j) {
+    private char bombCountToChar(char[][] matrix, int row, int col) {
+        return (char) (countAdjacentBombs(matrix, row, col) + '0');
+    }
+
+    private int countAdjacentBombs(char[][] matrix, int row, int col) {
         int count = 0;
-        count += checkNorthForBomb(matrix, i, j);
-        count += checkNorthEastForBomb(matrix, i, j);
-        count += checkEastForBomb(matrix, i, j);
-        count += checkSouthEastForBomb(matrix, i, j);
-        count += checkSouthForBomb(matrix, i, j);
-        count += checkSouthWestForBomb(matrix, i, j);
-        count += checkWestForBomb(matrix, i, j);
-        count += checkNorthWestForBomb(matrix, i, j);
+        count += isCellABomb(matrix, row - 1, col) ? 1 : 0;
+        count += isCellABomb(matrix, row - 1, col + 1) ? 1 : 0;
+        count += isCellABomb(matrix, row, col + 1) ? 1 : 0;
+        count += isCellABomb(matrix, row + 1, col + 1) ? 1 : 0;
+        count += isCellABomb(matrix, row + 1, col) ? 1 : 0;
+        count += isCellABomb(matrix, row + 1, col - 1) ? 1 : 0;
+        count += isCellABomb(matrix, row, col - 1) ? 1 : 0;
+        count += isCellABomb(matrix, row - 1, col - 1) ? 1 : 0;
         return count;
     }
 
-    private int checkNorthForBomb(char[][] matrix, int i, int j) {
-        return i - 1 >= 0 && matrix[i - 1][j] == '*' ? 1 : 0;
+    private boolean isCellABomb(char[][] matrix, int row, int col) {
+        if (!inRange(matrix, row, col)) return false;
+        return matrix[row][col] == BOMB_SYMBOL;
     }
 
-    private int checkNorthEastForBomb(char[][] matrix, int i, int j) {
-        return j + 1 < matrix[0].length && i - 1 >= 0 && matrix[i - 1][j + 1] == '*' ? 1 : 0;
-    }
-
-    private int checkEastForBomb(char[][] matrix, int i, int j) {
-        return j + 1 < matrix[0].length && matrix[i][j + 1] == '*' ? 1 : 0;
-    }
-
-    private int checkSouthEastForBomb(char[][] matrix, int i, int j) {
-        return j + 1 < matrix[0].length && i + 1 < matrix.length && matrix[i + 1][j + 1] == '*' ? 1 : 0;
-    }
-
-    private int checkSouthForBomb(char[][] matrix, int i, int j) {
-        return i + 1 < matrix.length && matrix[i + 1][j] == '*' ? 1 : 0;
-    }
-
-    private int checkSouthWestForBomb(char[][] matrix, int i, int j) {
-        return j - 1 >= 0 && i + 1 < matrix.length && matrix[i + 1][j - 1] == '*' ? 1 : 0;
-    }
-
-    private int checkWestForBomb(char[][] matrix, int i, int j) {
-        return j - 1 >= 0 && matrix[i][j - 1] == '*' ? 1 : 0;
-    }
-
-    private int checkNorthWestForBomb(char[][] matrix, int i, int j) {
-        return j - 1 >= 0 && i - 1 >= 0 && matrix[i - 1][j - 1] == '*' ? 1 : 0;
+    private boolean inRange(char[][] matrix, int row, int col) {
+        return row >= 0 && row < matrix.length && col >= 0 && col < matrix[0].length;
     }
 }

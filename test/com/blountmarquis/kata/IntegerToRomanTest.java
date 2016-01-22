@@ -1,6 +1,5 @@
 package com.blountmarquis.kata;
 
-import com.blountmarquis.katas.IntegerToRoman;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -42,6 +41,6 @@ public class IntegerToRomanTest {
 
     @Test
     public void whenNumIs998ReturnX() {
-        assertEquals("CMXCVIII", IntegerToRomanKata.intToRoman(998));
+        assertEquals("CMXCVIII", IntegerToRoman.intToRoman(998));
     }
 }

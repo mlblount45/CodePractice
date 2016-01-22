@@ -1,6 +1,5 @@
 package com.blountmarquis.kata;
 
-import com.blountmarquis.katas.FizzBuzz;
 import org.junit.Assert;
 import org.junit.Test;
 

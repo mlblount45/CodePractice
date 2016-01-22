@@ -1,4 +1,4 @@
-package com.blountmarquis.katas;
+package com.blountmarquis.kata;
 
 import java.util.AbstractMap;
 import java.util.LinkedHashMap;
