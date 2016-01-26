@@ -27,6 +27,7 @@ public class WordToIntegerConverter {
             if(integerLookup.containsKey(w)) num += integerLookup.get(w);
             else {
                 num *= denominationLookup.get(w);
+                if(w.equals("Hundred")) continue;
                 finalNum += num;
                 num = 0;
             }

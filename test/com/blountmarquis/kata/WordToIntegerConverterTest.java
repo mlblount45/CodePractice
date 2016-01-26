@@ -81,4 +81,9 @@ public class WordToIntegerConverterTest {
     public void whenWordIsOneBillionThenReturn1000000000(){
         assertEquals(1000000000, WordToIntegerConverter.toInteger("One Billion"));
     }
+
+    @Test
+    public void whenOneBillionEightHundredFiftyTwoMillionThreeHundredThirtyFourThousandFiveHundredFortySevenReturn1852334547(){
+        assertEquals(1852334547, WordToIntegerConverter.toInteger("One Billion Eight Hundred Fifty Two Million Three Hundred Thirty Four Thousand Five Hundred Forty Seven"));
+    }
 }
