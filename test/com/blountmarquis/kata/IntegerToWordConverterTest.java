@@ -62,4 +62,9 @@ public class IntegerToWordConverterTest {
     public void whenIntegerIs1000000ThenReturnOneBillion(){
         assertEquals("One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety", IntegerToWordConverter.toWords(1234567890));
     }
+
+    @Test
+    public void test(){
+        assertEquals("One Billion Eight Hundred Fifty Two Million Three Hundred Thirty Four Thousand Five Hundred Forty Seven", IntegerToWordConverter.toWords(1852334547));
+    }
 }
