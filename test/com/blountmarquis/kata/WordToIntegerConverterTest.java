@@ -61,6 +61,12 @@ public class WordToIntegerConverterTest {
         assertEquals(133, WordToIntegerConverter.toInteger("One Hundred Thirty Three"));
     }
 
+
+    @Test
+    public void whenWordIsOneThousandOneHundredReturn1100(){
+        assertEquals(1100, WordToIntegerConverter.toInteger("One Thousand One Hundred"));
+    }
+
     @Test
     public void whenWordIsFourThousandThenReturn4000(){
         assertEquals(4000, WordToIntegerConverter.toInteger("Four Thousand"));

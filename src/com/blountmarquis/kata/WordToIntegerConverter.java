@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class WordToIntegerConverter {
 
     private static HashMap<String, Integer> integerLookup = new HashMap<String, Integer>(){{
-        put("Zero",0);put("One", 1);put("Two", 2);put("Three", 3);put("Four", 4);put("Five",5);
+        put("",0);put("Zero",0);put("One", 1);put("Two", 2);put("Three", 3);put("Four", 4);put("Five",5);
         put("Six", 6);put("Seven",7);put("Eight",8);put("Nine",9);
 
         put("Ten",10);put("Eleven",11);put("Twelve",12);put("Thirteen",13);put("Fourteen",14);put("Fifteen",15);
@@ -19,18 +19,18 @@ public class WordToIntegerConverter {
     }};
 
     private static HashMap<String, Integer> denominationLookup = new HashMap<String, Integer>(){{
-        put("Hundred", 100);
-        put("Thousand", 1000);
-        put("Million", 1000000);
-        put("Billion", 1000000000);
+        put("Hundred", 100);put("Thousand", 1000);put("Million", 1000000);put("Billion", 1000000000);
     }};
     public static int toInteger(String word) {
-        if(word == null || word.isEmpty()) return 0;
-        int num = 0;
+        int num = 0, finalNum = 0;
         for (String w : word.split(" ")) {
             if(integerLookup.containsKey(w)) num += integerLookup.get(w);
-            else num *= denominationLookup.get(w);
+            else {
+                num *= denominationLookup.get(w);
+                finalNum += num;
+                num = 0;
+            }
         }
-        return num;
+        return finalNum+num;
     }
 }
