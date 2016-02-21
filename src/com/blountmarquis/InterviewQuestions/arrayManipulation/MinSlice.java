@@ -6,6 +6,8 @@ import java.util.Arrays;
  * Created by MLBlount on 4/20/2015.
  */
 public class MinSlice {
+
+    @Deprecated /*look into the validity of this algorithm Math.min(arr[0]... doesn't look correct*/
     public static int getKadaneAbsoluteMinSlice(int[] arr){
         int minEnd, minSlice;
         minEnd = minSlice = arr[0];
