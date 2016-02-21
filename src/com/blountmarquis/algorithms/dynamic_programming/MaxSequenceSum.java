@@ -5,6 +5,7 @@ package com.blountmarquis.algorithms.dynamic_programming;
  */
 public class MaxSequenceSum {
 
+    /*Implementation of Kadane's algorithm of finding max slice*/
     public static int getMaxSequenceSum(int[] arr) {
         if(arr == null) throw new IllegalArgumentException("array can't be null");
 
@@ -18,21 +19,8 @@ public class MaxSequenceSum {
         return sum;
     }
 
-    public static int getMaxSequenceSum2(int[] arr) {
-        if(arr == null) throw new IllegalArgumentException("array can't be null");
-
-        final int n = arr.length;
-        int[] sums = new int[n];
-        sums[0]= arr[0];
-
-
-        for (int i = 1; i < n; i++) {
-            sums[i] = Math.max((sums[i-1] + arr[i]), arr[i]);
-        }
-        return sums[n-1];
-    }
     public static void main(String[] args) {
-        int[] array = new int[]{2,3,-7,5,1,3,-9};
+        int[] array = new int[]{2, -1 ,2 ,3 ,4, -5};
         System.out.println(getMaxSequenceSum(array));
     }
 }
