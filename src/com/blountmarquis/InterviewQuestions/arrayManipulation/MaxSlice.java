@@ -22,7 +22,7 @@ public class MaxSlice {
     }
 
     public static void main(String[] args){
-        int[] array = new int[]{5,-7,3,5,-2,4,-1};
+        int[] array = new int[]{2, -1, 2, 3, 4, -5};
         int maxSlice = getMaxSlice(array);
         System.out.println("------Final Max Slice-----");
         System.out.println("Max slice is: " + maxSlice);

@@ -184,8 +184,9 @@ public class Sandbox {
             System.out.println("------Final Max Slice-----");
             System.out.println("Max slice is: " + maxSlice);*/
 
-        int h = 4;
-        System.out.println(1 << h);
+
 
     }
+
+
 }
