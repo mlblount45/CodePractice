@@ -6,35 +6,15 @@ import java.util.Scanner;
  * Created by mlblount on 3/12/2016.
  * <p/>
  * https://www.hackerrank.com/challenges/count-luck
- *
+ * <p/>
  * In this problem we are tasked with finding the total number of decision paths when attempting to find our way from
  * cell marked as 'M' in the matrix to cell marked as '*' in the matrix (in this order). When then must compare the
  * total number of decisions needed with the predicted number of decisions 'K'.
- *
+ * <p/>
  * This solution implements a DFS search when visiting a cell we mark the current cell as visited then visit all of
  * the neighboring cells which are valid locations to visit. Each cell is also evaluated to determine how many possible
- * paths this cell has if 0 pop this recusive call from the stack else if 1 add zero to next recrusive call else add
- * 1 to the next recursive call.
- *
- * Sample run:-------------
- 3
- 2 3
- *.M
- .X.
- 1
- 4 11
- .X.X......X
- .X*.X.XXX.X
- .XX.X.XM...
- ......XXXX.
- 3
- 4 11
- .X.X......X
- .X*.X.XXX.X
- .XX.X.XM...
- ......XXXX.
- 4
- --------------------------
+ * paths this cell has if 0 pop this recursive call from the recursive stack else if 1 add zero to next recursive
+ * call else add 1 to the next recursive call.
  */
 public class CountLuck {
     static Location[] locations = new Location[2];
@@ -72,8 +52,9 @@ public class CountLuck {
         if (row == locations[1].row && col == locations[1].col) return 0;
         matrix[row][col] = 'X';
         int paths = numberOfPaths(matrix, row, col);
-        if(paths == 0) return -1;
-        if(paths > 1) res = 1;
+        if (paths == 0) return -1;
+        if (paths > 1) res = 1;
+
 
         if (row > 0 && matrix[row-1][col] != 'X') {
             int result = numberOfDirectionChanges(matrix, row - 1, col);

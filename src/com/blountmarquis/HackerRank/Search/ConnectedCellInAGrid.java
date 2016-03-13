@@ -8,10 +8,9 @@ import java.util.Scanner;
  * https://www.hackerrank.com/challenges/connected-cell-in-a-grid
  *
  * In this problem we were challenge to find the largest cluster of 1's in a 2D array. In my implementation I applied
- * a DFS search. This algorithm individually checks boundary conditions before recurring. A more elegant approach would
- * be to check the boundary conditions at the start of the method i.e as a base conditions. Mark the current element
- * as visited as we currently are doing. Then call a single return afterwards and provide the appropriate row and col
- * values
+ * a DFS search. This algorithm checks the boundary conditions at the start of the method i.e as a base conditions.
+ * Marks the current element as visited. Then call a single return afterwards and provide the appropriate row and col
+ * values for each recursive call that's needed going in each direction
  */
 public class ConnectedCellInAGrid {
 
