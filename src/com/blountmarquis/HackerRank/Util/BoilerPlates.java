@@ -1,4 +1,4 @@
-package com.blountmarquis.HackerRank;
+package com.blountmarquis.HackerRank.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,12 @@ import java.util.Scanner;
  */
 public class BoilerPlates {
 
-    private static int[][] buildCharMatrix(Scanner in, int n){
-        int[][] matrix =  new int[n][n];
+    public static char[][] buildCharMatrix(Scanner in, int n, int m){
+        char[][] matrix =  new char[n][m];
         for(int i = 0; i< n; i++){
             String s = in.nextLine();
-            for(int j = 0; j<n; j++){
-                matrix[i][j] = s.charAt(j) - '0';
+            for(int j = 0; j<m; j++){
+                matrix[i][j] = s.charAt(j);
             }
         }return matrix;
     }
