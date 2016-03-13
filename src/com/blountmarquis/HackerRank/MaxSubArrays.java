@@ -12,7 +12,7 @@ public class MaxSubArrays {
         for(int i = 0; i < tests; i++){
             int n = in.nextInt();
             int[] arr = populateArray(in,n);
-            System.out.println(getMaxSlice(arr) + " " + getMaxSubSequence(arr));
+            System.out.println(getMaxSlice(arr) + " " + getMaxSubSequenceSum(arr));
         }
     }
     private static int[] populateArray(Scanner in, int size) {
@@ -32,7 +32,7 @@ public class MaxSubArrays {
         }return maxSlice;
     }
 
-    private static int getMaxSubSequence(int[] arr){
+    private static int getMaxSubSequenceSum(int[] arr){
         int maxSubSequence = arr[0];
 
         for(int i = 1; i < arr.length; i++){

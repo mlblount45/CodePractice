@@ -1,21 +1,13 @@
 package com.blountmarquis.HackerRank;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by mlblount on 3/4/2016.
  */
 public class BoilerPlates {
-
-    public static int[][] buildIntegerMatrix(Scanner in, int row, int col) {
-        int[][] matrix = new int[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                matrix[i][j] = in.nextInt();
-            }
-        }
-        return matrix;
-    }
 
     private static int[][] buildCharMatrix(Scanner in, int n){
         int[][] matrix =  new int[n][n];
@@ -25,6 +17,17 @@ public class BoilerPlates {
                 matrix[i][j] = s.charAt(j) - '0';
             }
         }return matrix;
+    }
+
+    public static void printCharMatrix(char[][] matrix){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                sb.append(matrix[i][j] + " ");
+            }
+            sb.append("\n");
+        }
+        System.out.println(sb.toString());
     }
 
     public static void printIntegerMatrix(int[][] matrix){
@@ -38,15 +41,14 @@ public class BoilerPlates {
         System.out.println(sb.toString());
     }
 
-    public static void printCharMatrix(char[][] matrix){
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                sb.append(matrix[i][j] + " ");
+    public static int[][] buildIntegerMatrix(Scanner in, int row, int col) {
+        int[][] matrix = new int[row][col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                matrix[i][j] = in.nextInt();
             }
-            sb.append("\n");
         }
-        System.out.println(sb.toString());
+        return matrix;
     }
 
     public static int[] buildArray(Scanner in, int size) {
@@ -63,6 +65,26 @@ public class BoilerPlates {
         for(int i = 0; i < arr.length; i++){
             sb.append(arr[i]);
             if(i < arr.length - 1) sb.append(" ");
+        }
+        return sb.toString();
+    }
+
+
+    public static List<Integer> buildList(Scanner in, int size) {
+        in.nextLine();
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0; i < size; i++) {
+            list.add(in.nextInt());
+        }
+        return list;
+    }
+
+
+    public static String printList(List<Integer> list) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < list.size(); i++){
+            sb.append(list.get(i));
+            if(i < list.size() - 1) sb.append(" ");
         }
         return sb.toString();
     }

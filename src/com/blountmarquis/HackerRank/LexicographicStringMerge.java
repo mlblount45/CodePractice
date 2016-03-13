@@ -15,22 +15,21 @@ public class LexicographicStringMerge {
         for (int i = 0; i < t; i++) {
             String s1 = in.nextLine();
             String s2 = in.nextLine();
-            System.out.println(lexicographicallyMerge(s1+"Z", s2+"Z"));
+            System.out.println(lexicographicallyMerge(s1, s2));
         }
     }
 
     private static String lexicographicallyMerge(String s1, String s2) {
-        SuffixArray sa1 = new SuffixArray(s1);
-        SuffixArray sa2 = new SuffixArray(s2);
-
+        SuffixArray suffixArray = new SuffixArray(s1+"Z"+s2+"Z");
         StringBuilder sb = new StringBuilder();
 
+        int n1 = s1.length(), n2 = s2.length();
         int i = 0, j = 0;
-        while (i < sa1.length-1 || j < sa2.length-1){
-            if(i >= sa1.length) {sb.append(sa2.select(j));break;}
-            else if (j >= sa2.length) {sb.append(sa1.select(i));break;}
-            else if (sa1.suffices[i].compareTo(sa2.suffices[j]) < 1) sb.append(sa1.suffices[i++].charAt(0));
-            else if (sa1.suffices[i].compareTo(sa2.suffices[j]) >= 1) sb.append(sa2.suffices[j++].charAt(0));
+        while (i < n1 || j < n2){
+            if(i >= n1) sb.append(suffixArray.suffices[j++].charAt(0));
+            else if (j >= n2) sb.append(suffixArray.suffices[i++].charAt(0));
+            else if (suffixArray.suffices[i].compareTo(suffixArray.suffices[n1+j]) <1) sb.append(suffixArray.suffices[i++].charAt(0));
+            else if (suffixArray.suffices[i].compareTo(suffixArray.suffices[n1+j])  >= 1) sb.append(suffixArray.suffices[j++].charAt(0));
         }
         return sb.toString();
     }
