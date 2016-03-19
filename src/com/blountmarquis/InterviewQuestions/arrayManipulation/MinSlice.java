@@ -6,12 +6,13 @@ import java.util.Arrays;
  * Created by MLBlount on 4/20/2015.
  */
 public class MinSlice {
+
+    @Deprecated /*look into the validity of this algorithm Math.min(arr[0]... doesn't look correct*/
     public static int getKadaneAbsoluteMinSlice(int[] arr){
         int minEnd, minSlice;
         minEnd = minSlice = arr[0];
 
         for(int i = 1; i < arr.length; i++){
-            System.out.println("potential Min ending is: " + Math.abs(minEnd + arr[i]));
             minEnd = Math.min(arr[0], Math.abs(minEnd + arr[i]));
             minSlice = Math.min(minEnd, minSlice);
         }
@@ -21,8 +22,7 @@ public class MinSlice {
     public static int getSortedPrefixAbsoluteMinSlice(int[] arr){
         int[] sums = getPrefixSum(arr);
         Arrays.sort(sums);
-        int minDifferance = getMinDifference(sums);
-        return minDifferance;
+        return getMinDifference(sums);
     }
 
     public static int[] getPrefixSum(int[] arr){
@@ -48,7 +48,7 @@ public class MinSlice {
 
     public static void main(String[] args){
         int[] array = new int[]{2,-4,6,-3,9};
-        int minSlice = getSortedPrefixAbsoluteMinSlice(array);
+        int minSlice = getKadaneAbsoluteMinSlice(array);
         System.out.println("------Final Min Slice-----");
         System.out.println("Min slice is: " + minSlice);
     }

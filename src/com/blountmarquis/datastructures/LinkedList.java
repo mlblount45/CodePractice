@@ -209,7 +209,3 @@ public class LinkedList<T extends Comparable<T>> {
 
 
 }
-
-class testPrivateClass{
-
-}

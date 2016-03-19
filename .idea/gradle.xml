@@ -11,6 +11,11 @@
             <option value="C:/SandBox/Gradle" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="C:/SandBox/Gradle" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

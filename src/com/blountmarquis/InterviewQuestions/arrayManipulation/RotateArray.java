@@ -18,7 +18,9 @@ public class RotateArray {
 
     public static void rotateArrayLeft(int[] arr, int shift){
         reverse(arr,0,shift-1);
+        PrintableArray.printArray("Array after first reverse: ", arr);
         reverse(arr,shift,arr.length - 1);
+        PrintableArray.printArray("Array after second reverse: ", arr);
         reverse(arr,0,arr.length -1);
         PrintableArray.printArray("Array after last reverse: ", arr);
     }
@@ -36,6 +38,6 @@ public class RotateArray {
     public static void main(String[] args){
         int array[] = new int[]{1, 2, 3, 4, 5, 6};
         PrintableArray.printArray("Array before reverse: ", array);
-        RotateArray.rotateArrayLeft(array,4);
+        RotateArray.rotateArrayRight(array,4);
     }
 }

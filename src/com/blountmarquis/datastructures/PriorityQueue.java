@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by mlblount on 10/7/2014.
  */
-public class PriorityQueue {
+public class PriorityQueue<S> {
     public static int heapMaximum(int[] array){return array[0];}
 
     public static int[] heapExtractMax(int[] array){

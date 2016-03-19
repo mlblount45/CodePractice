@@ -9,7 +9,6 @@ public class InsertionSort extends PrintableArray {
 
     public static void sort(int[] array) {
         if (array == null) return;
-
         for (int j = 1; j < array.length; j++) {
             int key = array[j];
             int i = j - 1;
@@ -19,7 +18,6 @@ public class InsertionSort extends PrintableArray {
                 i--;
             }
             array[i + 1] = key;
-
         }
     }
 
@@ -27,9 +25,9 @@ public class InsertionSort extends PrintableArray {
         if (arr == null) return;
 
         int n = arr.length;
-        for (int i = 1; i <n; i++) {
-            for (int j = i; j > 0 && arr[j] < arr[j-1]; j--) {
-                swap(arr, j, j-1);
+        for (int i = 1; i < n; i++) {
+            for (int j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
+                swap(arr, j, j - 1);
             }
         }
     }
@@ -41,7 +39,7 @@ public class InsertionSort extends PrintableArray {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{2,3,7,5,1,3,9};
+        int[] array = new int[]{2, 3, 7, 5, 1, 3, 9};
         insertionSortAlternative(array);
         PrintableArray.printArray(array);
     }
