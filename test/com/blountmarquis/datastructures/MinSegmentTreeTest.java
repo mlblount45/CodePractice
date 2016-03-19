@@ -6,6 +6,8 @@ import org.junit.Test;
 
 /**
  * Created by MLBlount on 12/18/2015.
+ *
+ *
  */
 public class MinSegmentTreeTest {
 

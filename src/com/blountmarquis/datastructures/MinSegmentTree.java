@@ -2,6 +2,7 @@ package com.blountmarquis.datastructures;
 
 /**
  * Created by MLBlount on 12/18/2015.
+ *
  */
 public class MinSegmentTree {
     public class Node {
