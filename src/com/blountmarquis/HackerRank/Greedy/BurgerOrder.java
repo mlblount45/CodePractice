@@ -1,10 +1,14 @@
-package com.blountmarquis.HackerRank;
+package com.blountmarquis.HackerRank.Greedy;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
 /**
+ * Jim and the Orders
+ *
+ * https://www.hackerrank.com/challenges/jim-and-the-orders
+ *
  * Created by mlblount on 2/18/2016.
  */
 public class BurgerOrder {

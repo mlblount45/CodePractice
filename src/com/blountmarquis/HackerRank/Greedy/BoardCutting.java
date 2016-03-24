@@ -1,9 +1,11 @@
-package com.blountmarquis.HackerRank;
+package com.blountmarquis.HackerRank.Greedy;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
+ * https://www.hackerrank.com/challenges/board-cutting
+ *
  * Created by mlblount on 2/20/2016.
  */
 public class BoardCutting {
