@@ -13,38 +13,39 @@ import java.util.Scanner;
  * as below. key = M - val, val = index.
  */
 public class IceCreamParlor {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
 
-        for(int i = 0; i < t; i++) {
-            int m = in.nextInt();
-            int n = in.nextInt();
-            int[] arr = buildArray(in, n);
-            printIndexPair(arr, m);
-        }
-    }
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int t = in.nextInt();
 
-    private static int[] buildArray(Scanner in, int size) {
-        in.nextLine();
-        int[] arr = new int[size];
-        for(int i = 0; i < size; i++) {
-            arr[i] = in.nextInt();
-        }
-        return arr;
+    for (int i = 0; i < t; i++) {
+      int m = in.nextInt();
+      int n = in.nextInt();
+      int[] arr = buildArray(in, n);
+      printIndexPair(arr, m);
     }
+  }
 
-    private static void printIndexPair(int[] arr, int m) {
-        int x = 0, y=0;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < arr.length; i++) {
-            if (map.containsKey(arr[i])) {
-                x = map.get(arr[i]) +1;
-                y= i +1;
-                break;
-            }
-            map.put(m - arr[i],i);
-        }
-        System.out.println(x + " " + y);
+  private static int[] buildArray(Scanner in, int size) {
+    in.nextLine();
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++) {
+      arr[i] = in.nextInt();
     }
+    return arr;
+  }
+
+  private static void printIndexPair(int[] arr, int m) {
+    int x = 0, y = 0;
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for (int i = 0; i < arr.length; i++) {
+      if (map.containsKey(arr[i])) {
+        x = map.get(arr[i]) + 1;
+        y = i + 1;
+        break;
+      }
+      map.put(m - arr[i], i);
+    }
+    System.out.println(x + " " + y);
+  }
 }

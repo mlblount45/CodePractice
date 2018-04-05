@@ -8,20 +8,27 @@ import java.util.Stack;
  */
 public class BraceChecker {
 
-    private static HashMap<Character,Character> popChars = new HashMap<Character, Character>(){{
-        put(')','(');put(']','[');put('}','{');
-    }};
+  private static HashMap<Character, Character> popChars = new HashMap<Character, Character>() {{
+    put(')', '(');
+    put(']', '[');
+    put('}', '{');
+  }};
 
-    public static boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (popChars.containsKey(c)) {
-                if(stack.isEmpty()) return false;
-                if(stack.pop() != popChars.get(c)) return false;
-            }else
-                stack.push(c);
+  public static boolean isValid(String s) {
+    Stack<Character> stack = new Stack<>();
+    for (char c : s.toCharArray()) {
+      if (popChars.containsKey(c)) {
+        if (stack.isEmpty()) {
+          return false;
         }
-        return stack.isEmpty();
+        if (stack.pop() != popChars.get(c)) {
+          return false;
+        }
+      } else {
+        stack.push(c);
+      }
     }
+    return stack.isEmpty();
+  }
 
 }

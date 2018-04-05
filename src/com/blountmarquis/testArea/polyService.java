@@ -7,15 +7,14 @@ import java.util.Date;
  */
 public class polyService {
 
-    public static polyInterface getPoly(){
-        return new polyClass(0,1);
-    }
+  public static polyInterface getPoly() {
+    return new polyClass(0, 1);
+  }
 
-    public static void main(String[] args) {
-        System.out.println(getPoly());
-        System.out.println(new Date());
-    }
-
+  public static void main(String[] args) {
+    System.out.println(getPoly());
+    System.out.println(new Date());
+  }
 
 
 }

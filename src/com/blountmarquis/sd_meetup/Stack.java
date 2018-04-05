@@ -15,54 +15,67 @@ import java.util.EmptyStackException;
  * The min() method returns the value of the min stack top.
  */
 public class Stack {
-    private StackNode top;
-    private StackNode min;
 
-    public void push(int val){
-        StackNode n = new StackNode(val);
+  private StackNode top;
+  private StackNode min;
 
-        if(top == null){ top = n;min = n;}
-        else {
-            if(n.val < min.val){ n.next = min; min = n; }
-            n.next = top;
-            top = n;
-        }
+  public static void main(String[] args) {
+    Stack s = new Stack();
+    s.push(6);
+    s.push(2);
+    s.push(4);
+    s.push(5);
+    s.push(1);
+    System.out.println(s.min());
+    s.pop();
+    s.pop();
+    s.pop();
+    s.pop();
+    System.out.println(s.min());
+    s.push(3);
+    s.push(7);
+    System.out.println(s.min());
+  }
+
+  public void push(int val) {
+    StackNode n = new StackNode(val);
+
+    if (top == null) {
+      top = n;
+      min = n;
+    } else {
+      if (n.val < min.val) {
+        n.next = min;
+        min = n;
+      }
+      n.next = top;
+      top = n;
     }
+  }
 
-    public int pop(){
-        if(top == null) throw new EmptyStackException();
-        if(top == min) min = min.next;
-        int temp = top.val;
-        top = top.next;
-        return temp;
+  public int pop() {
+    if (top == null) {
+      throw new EmptyStackException();
     }
-
-    public int min(){return min.val;}
-
-    private class StackNode {
-        int val;
-        StackNode next;
-
-        public StackNode(int val) {
-            this.val = val;
-        }
+    if (top == min) {
+      min = min.next;
     }
+    int temp = top.val;
+    top = top.next;
+    return temp;
+  }
 
-    public static void main(String[] args) {
-        Stack s = new Stack();
-        s.push(6);
-        s.push(2);
-        s.push(4);
-        s.push(5);
-        s.push(1);
-        System.out.println(s.min());
-        s.pop();
-        s.pop();
-        s.pop();
-        s.pop();
-        System.out.println(s.min());
-        s.push(3);
-        s.push(7);
-        System.out.println(s.min());
+  public int min() {
+    return min.val;
+  }
+
+  private class StackNode {
+
+    int val;
+    StackNode next;
+
+    public StackNode(int val) {
+      this.val = val;
     }
+  }
 }

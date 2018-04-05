@@ -5,9 +5,10 @@ import java.io.IOException;
 /**
  */
 public class Sandbox {
-    public static void main(String args[]) throws IOException {
 
-        //int array[] = new int[]{31, 41, 59, 26, 41, 58};
+  public static void main(String args[]) throws IOException {
+
+    //int array[] = new int[]{31, 41, 59, 26, 41, 58};
             /*InsertionSort.printArray(array);
             System.out.println("--------------");
             InsertionSort.sort(array);
@@ -26,8 +27,8 @@ public class Sandbox {
 
             /*int array[] = new int[]{13, -3, -25, 20, -3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
             MaxSubArray.printArray(MaxSubArray.findMaxSubArray(array));*/
-        //1, 2, 3, 8, 4, 9, 10, 14, 16, 7
-        //16, 4, 10, 14, 7, 9, 3, 2, 8, 1
+    //1, 2, 3, 8, 4, 9, 10, 14, 16, 7
+    //16, 4, 10, 14, 7, 9, 3, 2, 8, 1
             /*int array[] = new int[]{16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
             PrintableArray.printArray("initial array", array);
             Heap.buildMinHeap(array);
@@ -62,7 +63,7 @@ public class Sandbox {
             ArrayList<Integer> list = new ArrayList<Integer>(Arrays.<Integer>asList(array1));
             HeapSort.maxHeapSort(list);
             System.out.println("ArrayListHeap : " + list);*/
-            /*Permutation.printPermutations("AB");*/
+    /*Permutation.printPermutations("AB");*/
             /*TreeMap<String, ArrayList<String>> treeMap = new TreeMap<String, ArrayList<String>>();
             treeMap.put("hello", new ArrayList<String>());
             ArrayList<String> list = treeMap.get("hello");
@@ -214,10 +215,6 @@ public class Sandbox {
 
         System.out.println(36D);*/
 
-
-
-
-	   
-    }
+  }
 
 }

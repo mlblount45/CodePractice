@@ -18,36 +18,42 @@ import java.util.Scanner;
  *
  * I finely settled with just implementing the naive approach which have complexity of O(n * t) n is the number of
  * chapters while t is the largest problem set out of the n chapters.
- *
  */
 public class LisasWorkbook {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int k = in.nextInt();
-        int[] arr =  buildArray(in, n);
-        System.out.println(specialProblemCount(arr, k));
-    }
 
-    private static int[] buildArray(Scanner in, int size) {
-        in.nextLine();
-        int[] arr = new int[size];
-        for(int i = 0; i < size; i++) {
-            arr[i] = in.nextInt();
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    int k = in.nextInt();
+    int[] arr = buildArray(in, n);
+    System.out.println(specialProblemCount(arr, k));
+  }
+
+  private static int[] buildArray(Scanner in, int size) {
+    in.nextLine();
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++) {
+      arr[i] = in.nextInt();
+    }
+    return arr;
+  }
+
+  private static int specialProblemCount(int[] arr, int k) {
+
+    int page = 1, special = 0;
+    for (int probCount : arr) {
+      for (int i = 1; i <= probCount; i++) {
+        if (i == page) {
+          special++;
         }
-        return arr;
-    }
-
-    private static int specialProblemCount(int[] arr, int k) {
-
-        int page = 1, special = 0;
-        for (int probCount : arr) {
-            for(int i = 1; i <= probCount; i++) {
-                if(i == page)
-                    special++;
-                if(i % k == 0)page++;
-            }if(probCount%k !=0)page++;
+        if (i % k == 0) {
+          page++;
         }
-        return special;
+      }
+      if (probCount % k != 0) {
+        page++;
+      }
     }
+    return special;
+  }
 }

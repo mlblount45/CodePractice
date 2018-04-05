@@ -3,20 +3,21 @@ package com.blountmarquis.testArea;
 /**
  * Created by MLBlount on 8/3/2015.
  */
-public class polyClass implements polyInterface{
-    public int i;
-    public int j;
+public class polyClass implements polyInterface {
 
-    public polyClass(int i, int i1) {
-        this.i = i;
-        this.j = i1;
-    }
+  public int i;
+  public int j;
 
-    @Override
-    public String toString() {
-        return "polyClass{" +
-                "i=" + i +
-                ", j=" + j +
-                '}';
-    }
+  public polyClass(int i, int i1) {
+    this.i = i;
+    this.j = i1;
+  }
+
+  @Override
+  public String toString() {
+    return "polyClass{" +
+        "i=" + i +
+        ", j=" + j +
+        '}';
+  }
 }

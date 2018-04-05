@@ -14,13 +14,15 @@ import com.blountmarquis.maze.models.Maze;
  * that other products extent and override parts as needed.
  */
 public class RunMazeAbstractFactoryClient {
-    public static void main(String[] args){
-        playWithBasicMaze();
-    }
-    public static void playWithBasicMaze() {
-        MazeGame mazeGame = new MazeGame();
-        EnchantedMazeFactory enchantedMazeFactory = new EnchantedMazeFactory();
-        Maze maze = new EnchantedMaze(mazeGame.createMaze(enchantedMazeFactory));
-        System.out.println("Maze class is:" + maze.getClass());
-    }
+
+  public static void main(String[] args) {
+    playWithBasicMaze();
+  }
+
+  public static void playWithBasicMaze() {
+    MazeGame mazeGame = new MazeGame();
+    EnchantedMazeFactory enchantedMazeFactory = new EnchantedMazeFactory();
+    Maze maze = new EnchantedMaze(mazeGame.createMaze(enchantedMazeFactory));
+    System.out.println("Maze class is:" + maze.getClass());
+  }
 }
