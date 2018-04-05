@@ -1,7 +1,5 @@
 package com.blountmarquis.stackoverflow;
 
-import org.junit.Test;
-
 import java.util.Comparator;
 import java.util.Iterator;
 
@@ -169,25 +167,4 @@ public class BasicLinkedList<T> implements Iterable<T> {
     }
 
 
-    @Test
-    public void test() {
-        BasicLinkedList<String> basicList = new BasicLinkedList<String>();
-        basicList.addToEnd("Blue");
-        basicList.addToEnd("Blue");
-        basicList.addToEnd("Red");
-        basicList.addToEnd("Magenta");
-        basicList.addToEnd("Red");
-
-        //Blue -> Red -> Magenta -> null
-        basicList.remove("Blue", String.CASE_INSENSITIVE_ORDER);
-        //Blue -> Magenta -> null
-       // System.out.println(basicList.getFirst().toString());
-        //assertTrue(basicList.getFirst().equals("Red"));
-        //getLast() returns the tail node
-       // System.out.println(basicList.getLast());
-        //assertTrue(basicList.getLast().equals("Magenta"));
-        for (String s: basicList){
-            System.out.println(s);
-        }
-    }
 }

@@ -1,9 +1,10 @@
 package com.blountmarquis.algorithms.divideandconqure;
 
-import com.blountmarquis.algorithms.divideandconquer.BinarySearch;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import com.blountmarquis.algorithms.divideandconquer.BinarySearch;
 
 /**
  * Created by MLBlount on 12/23/2015.
@@ -46,6 +47,12 @@ public class BinarySearchTest {
         assertEquals(0, getIndex(new int[]{1, 2, 3}, 1));
     }
 
-    private int getIndex(int[] nums, int target) {return BinarySearch.findIndex(nums, target);}
+    @Test
+    public void when() {
+        //LocalDate
+    }
+    private int getIndex(int[] nums, int target) {
+        return BinarySearch.findIndex(nums, target);
+    }
 
 }

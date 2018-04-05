@@ -184,9 +184,40 @@ public class Sandbox {
             System.out.println("------Final Max Slice-----");
             System.out.println("Max slice is: " + maxSlice);*/
 
+        /*String timezone = "US/Eastern";
+        ZoneId zoneId = ZoneId.of(timezone);
+        ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(Instant.now(), zoneId);
+
+        ZonedDateTime midNight = ZonedDateTime.of(zonedDateTime.getYear(), zonedDateTime.getMonthValue(),
+                                                 zonedDateTime.getDayOfMonth(), 16, 0, 0, 0, zoneId);
+
+        zonedDateTime.truncatedTo(ChronoUnit.HOURS);
+        midNight.truncatedTo(ChronoUnit.HOURS);
+
+        System.out.println("Truncated time 1: " + zonedDateTime.truncatedTo(ChronoUnit.HOURS));
+        System.out.println("Midnight: " + midNight.truncatedTo(ChronoUnit.HOURS));
+
+        boolean isEqual = zonedDateTime.truncatedTo(ChronoUnit.HOURS).isEqual(midNight);
+        System.out.println("isEqual? " + String.valueOf(isEqual));
+        if(zonedDateTime.truncatedTo(ChronoUnit.HOURS).equals(midNight.truncatedTo(ChronoUnit.HOURS))) {
+            System.out.println("timezones must be the same");
+        }
+
+        System.out.println("---------");
+        ZonedDateTime currentTime = ZonedDateTime.ofInstant(Instant.now(),ZoneId.systemDefault());
+        System.out.println("Current time in sd: " + currentTime);
+        //String timezone = venue.getTimezone();
+        //ZoneId zoneId = ZoneId.of(timezone);
+        ZonedDateTime currentTimeAtVenue = currentTime.withZoneSameInstant(zoneId);
+        System.out.println("Current time in NY: " +currentTimeAtVenue);
 
 
+        System.out.println(36D);*/
+
+
+
+
+	   
     }
-
 
 }
