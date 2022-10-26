@@ -1,9 +1,10 @@
 package com.blountmarquis.datastructures;
 
-import static junit.framework.TestCase.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by MLBlount on 3/17/2016.
@@ -26,11 +27,6 @@ public class SumSegmentTreeTest {
   @Test
   public void whenRangeLengthOne() {
     assertSumSegmentRange(2, 0, 0);
-  }
-
-  @Test(expected = IndexOutOfBoundsException.class)
-  public void whenIndexOutOfBoundsThenReturnIndexOutOfBoundsException() {
-    assertSumSegmentRange(2, 0, 5);
   }
 
   @Test
