@@ -1,8 +1,9 @@
 package com.blountmarquis.createdProblems;
 
-import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by mlblount on 8/30/16.

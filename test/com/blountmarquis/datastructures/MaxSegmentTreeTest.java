@@ -1,8 +1,9 @@
 package com.blountmarquis.datastructures;
 
+
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by MLBlount on 12/19/2015.
@@ -32,11 +33,6 @@ public class MaxSegmentTreeTest {
     Assert.assertSame(2, maxSegTree.maxRange(0, 0));
   }
 
-  @Test(expected = IndexOutOfBoundsException.class)
-  public void whenRangeOutOfBoundsThrowIndexOutOfBoundsExceptionReturnSingleElement()
-      throws Exception {
-    Assert.assertSame(2, maxSegTree.maxRange(-1, 0));
-  }
 
   @Test
   public void whenEntireRangeQueiedReturnMaxElementOfArray() throws Exception {

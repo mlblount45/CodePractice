@@ -1,11 +1,13 @@
 package com.blountmarquis.datastructures;
 
-import static junit.framework.TestCase.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * Created by mlblount on 3/6/2016.
